@@ -2,9 +2,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|e_mail|string|null: false|
-|password|string|null: false|
-|name|string|null:false|
+|e_mail|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+|name|string|null:false|index: true|
 
 ### Association
 
