@@ -1,14 +1,20 @@
 .content
   .left-content
-    .left-content__user-info test_user
-    .left-content__group-index
-      .left-content__group--check
+    .left-header
+      .left-header__user
+        %p.left-header__user__name
+        .left-header__user__method
+    .left-groups
+      .left-group
+        .left-group__name test_group
+        .left-group__latest-message Hello,World
   .right-content
-    .right-content__group-info
-    .right-content__message
-      .right-content__message__content--reading
-        .right-content__message__content__user-info
-        .right-content__message__content__text
+    .right-content__header
+    .right-content__main
+      .right-content__messages
+        .right-content__message
+        .right-content__message__user-name
+        .right-content__message__user-message
     .input-form
 
 
