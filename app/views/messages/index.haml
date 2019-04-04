@@ -13,9 +13,7 @@
             %a
               %i.fa.fa-cog
     .left-groups
-      .left-group
-        %p.left-group__name test_group
-        %p.left-group__latest-message Hello,World
+      = render "group"
   .right-content
     .right-content__header
       .right-content__header__group
@@ -23,10 +21,7 @@
         %p.right-content__group-index member:yuta
       %a.right-content__header__edit Edit
     .right-content__messages
-      .right-content__message
-        %p.right-content__message__user-name test_user
-        %a.right-content__message__created_at 2019/03/31(Sun) 17:17:59
-        %p.right-content__message__user-message こんにちは！
+      = render "message"
     .input-form
       %form.form
         .input-box
