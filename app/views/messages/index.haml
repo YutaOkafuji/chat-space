@@ -7,11 +7,11 @@
         %p.left-header__user__name test_user
         %ul.left-header__user__menu
           %li.left-header__user__list
-            %a
-              %i.fa.fa-edit
+            = link_to "", class: "left-header__user__list__link" do
+              =fa_icon "edit"
           %li.left-header__user__list
-            %a
-              %i.fa.fa-cog
+            = link_to "", class: "left-header__user__list__link" do
+              =fa_icon "cog"
     .left-groups
       = render "group"
   .right-content
@@ -19,7 +19,7 @@
       .right-content__header__group
         %p.right-content__group-name test-group
         %p.right-content__group-index member:yuta
-      %a.right-content__header__edit Edit
+      = link_to 'Edit',"",class: "right-content__header__edit"
     .right-content__messages
       = render "message"
     .input-form
@@ -27,6 +27,8 @@
         .input-box
           %input{type: "text",class: "inputbox-text",placeholder: "type a message"}
           %label.inputbox-image
-            %i.far.fa-image
-            %input{type:"file",class: "inputbox-image__input"}
-        %input{type: "submit",class: "input-submit",value: "send"}
+            = fa_icon 'image'
+            %input{type: "file",class: "inputbox-image__input"}
+        %input{type: "submit",value: "send",class: "input-submit"}
+
+
