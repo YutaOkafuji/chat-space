@@ -17,27 +17,27 @@
       background-color: #253141;
       padding: $padding-side20;
       box-sizing: border-box;
-      & .left-header__user{
+      &__user{
         line-height: 100px;
         width: 100%;
         display: flex;
         position: relative;
-        & .left-header__user__name{
+        &__name{
           font-weight: bold;
           color: $white;
           font-size: 16px;
           position: absolute;
           left: 0;
           }
-        & .left-header__user__menu{
+        &__menu{
           display: flex;
           float: right;
           position: absolute;
           right: 0;
-          & .left-header__user__list{
+          &__list{
             display: inline-block;
             margin-left: 0.3rem;
-            & .left-header__user__list__link{
+            &__link{
               color: $white;
               & .fa.fa-edit{
                 display: inline-block;
@@ -58,13 +58,13 @@
       & .left-group{
         width: 240px;
         padding: 20px;
-        & .left-group__name{
+        &__name{
           padding-bottom: 5px;
           color: $white;
           font-size: 15px;
           font-weight: bold;
         }
-        & .left-group__latest-message{
+        &__latest-message{
           color: $white;
           font-size: 11px;
           font-weight: bold;
@@ -76,24 +76,24 @@
   .right-content{ //right-content start
     float: left;
     width: calc(100vw - 300px);
-    & .right-content__header{
+    &__header{
       height: 100px;
       border-bottom: solid 1px #eeeeee;
       padding: 0 40px;
-      & .right-content__header__group{
+      &__group{
         padding-top: 35px;
         float: left;
       }
-        & .right-content__group-name{
+        &__name{
           font-size: 20px;
           color: #333333;
           padding-bottom: 15px;
         }
-        & .right-content__group-index{
+        &__index{
           font-size: 12px;
           color: #999999;
         }
-      & .right-content__header__edit{
+      &__edit{
         float: right;
         border: solid 1px $skyblue;
         color: $skyblue;
@@ -112,19 +112,19 @@
       box-sizing: border-box;
       & .right-content__message{
         padding-bottom: 40px;
-        & .right-content__message__user-name{
+        &__user-name{
           font-size: 16px;
           color: #434A54;
           font-weight: bold;
           display: inline-block;
         }
-        & .right-content__message__created_at{
+        &__created_at{
           font-size: 12px;
           color: #999999;
           padding-left: 10px;
           display: inline-block;
         }
-        & .right-content__message__user-message{
+        &__user-message{
           font-size: 14px;
           color: #434A54;
           padding-top: 10px;
@@ -142,19 +142,19 @@
         & .input-box{
           width: 100%;
           position: relative;
-          & .inputbox-text{
+          &__text{
             height: 50px;
             width: 100%;
             padding: 0 40px 0 10px;
             border-style: none;
             box-sizing: border-box;
           }
-          & .inputbox-image{
+          &__image{
             position: absolute;
             top: 10px;
             right: 10px;
             font-size: 1.3rem;
-            & .inputbox-image__input{
+            &__input{
               display: none;
             }
             & .fa{
