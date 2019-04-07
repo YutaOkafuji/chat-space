@@ -1,6 +1,6 @@
 .content{
   .infomation-box{
-    background-color: $skyblue;
+    background-color: $light_blue;
     color: $white;
     width: 100%;
     & .notice{
@@ -95,8 +95,8 @@
         }
       &__edit{
         float: right;
-        border: solid 1px $skyblue;
-        color: $skyblue;
+        border: solid 1px $light_blue;
+        color: $light_blue;
         line-height: 40px;
         margin-top: 28px;
         display: inline-block;
@@ -167,7 +167,7 @@
           width: 100px;
           margin-left: 15px;
           padding: 0 30px;
-          background-color: $skyblue;
+          background-color: $light_blue;
           color: $white;
         }
       }
