@@ -28,6 +28,7 @@
           font-size: 16px;
           position: absolute;
           left: 0;
+          text-decoration:none;
           }
         &__menu{
           display: flex;
@@ -58,6 +59,8 @@
       & .left-group{
         width: 240px;
         padding: 20px;
+        display:inline-block;
+        text-decoration:none;
         &__name{
           padding-bottom: 5px;
           color: $white;
