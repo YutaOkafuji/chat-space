@@ -1,4 +1,7 @@
 @import "./reset";
-@import "./variable";
-@import "./index";
+@import "config/variable";
+@import "modules/index";
+@import "modules/user";
 @import "font-awesome";
+@import "config/flash";
+@import "modules/group";
