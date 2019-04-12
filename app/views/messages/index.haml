@@ -8,14 +8,15 @@
         %p.right-content__header__group__index member:yuta
       = link_to 'Edit',"",class: "right-content__header__edit"
     .right-content__messages
-      = render "message"
+      = render @messages
     .input-form
-      %form.form
-        .input-box
-          %input{type: "text",class: "input-box__text",placeholder: "type a message"}
-          %label.input-box__image
-            = fa_icon 'image'
-            %input{type: "file",class: "input-box__image__input"}
-        %input{type: "submit",value: "send",class: "input-submit"}
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
 
 
