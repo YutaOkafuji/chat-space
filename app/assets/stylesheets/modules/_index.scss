@@ -1,4 +1,78 @@
 .content{
+  .infomation-box{
+    background-color: $skyblue;
+    color: $white;
+    width: 100%;
+    & .notice{
+      text-align: center;
+    }
+  }
+  .left-content{  //left-content start
+    float: left;
+    width: 300px;
+    background-color: #2f3e51;
+    & .left-header{
+      width: 100%;
+      height: 100px;
+      background-color: #253141;
+      padding: $padding-side20;
+      box-sizing: border-box;
+      &__user{
+        line-height: 100px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        &__name{
+          font-weight: bold;
+          color: $white;
+          font-size: 16px;
+          position: absolute;
+          left: 0;
+          }
+        &__menu{
+          display: flex;
+          float: right;
+          position: absolute;
+          right: 0;
+          &__list{
+            display: inline-block;
+            margin-left: 0.3rem;
+            &__link{
+              color: $white;
+              & .fa.fa-edit{
+                display: inline-block;
+                font-size: 14px;
+              }
+              & .fa.fa-cog{
+                display: inline-block;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    & .left-groups{
+      width: 300px;
+      height: 689px;
+      & .left-group{
+        width: 240px;
+        padding: 20px;
+        &__name{
+          padding-bottom: 5px;
+          color: $white;
+          font-size: 15px;
+          font-weight: bold;
+        }
+        &__latest-message{
+          color: $white;
+          font-size: 11px;
+          font-weight: bold;
+        }
+      }
+    }
+  } //left-content end
+
   .right-content{ //right-content start
     float: left;
     width: calc(100vw - 300px);
@@ -21,8 +95,8 @@
         }
       &__edit{
         float: right;
-        border: solid 1px $light_blue;
-        color: $light_blue;
+        border: solid 1px $skyblue;
+        color: $skyblue;
         line-height: 40px;
         margin-top: 28px;
         display: inline-block;
@@ -93,7 +167,7 @@
           width: 100px;
           margin-left: 15px;
           padding: 0 30px;
-          background-color: $light_blue;
+          background-color: $skyblue;
           color: $white;
         }
       }
