@@ -1,6 +1,8 @@
 .content
+  .infomation-box
+    .notice
   .left-content
-    = render "shared/side_bar"
+    = render "side_bar"
   .right-content
     .right-content__header
       .right-content__header__group
@@ -8,15 +10,15 @@
         %p.right-content__header__group__index member:yuta
       = link_to 'Edit',"",class: "right-content__header__edit"
     .right-content__messages
-      = render @messages
+      = render "message"
     .input-form
       .form
         = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            = f.label :image, class: 'input-box__image' do
               = fa_icon 'picture-o', class: 'icon'
-              = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'
+              = f.file_field :image, class: 'input-box__image__input'
+          = f.submit 'Send', class: 'input-submit'
 
 
