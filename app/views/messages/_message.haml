@@ -1,4 +1,11 @@
-.right-content__message
-  %p.right-content__message__user-name test_user
-  %a.right-content__message__created_at 2019/03/31(Sun) 17:17:59
-  %p.right-content__message__user-message こんにちは！
+.message
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-meesage
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
