@@ -1,8 +1,8 @@
-@import "./reset";
-@import "./config/variable";
-@import "./config/flash";
-@import "./modules/index";
-@import "./modules/user.scss";
+@import "config/reset";
 @import "font-awesome";
-@import "./modules/side-bar";
-@import "./modules/group.scss";
+@import "config/variable";
+@import "config/flash";
+@import "modules/side-bar";
+@import "modules/group";
+@import "modules/user";
+@import "modules/index";
