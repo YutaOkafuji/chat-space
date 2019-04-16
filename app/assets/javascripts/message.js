@@ -1,5 +1,5 @@
 $(function(){
-  $('message-form').on('submit', function(e) {
+  $('#message-form').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     $.ajax({
@@ -13,6 +13,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.right-content__messages').append(html);
+      $('.input-box__text').val('')
     })
   });
 });
