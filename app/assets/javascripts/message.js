@@ -10,5 +10,9 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.right-content__messages').append(html);
+    })
   });
 });
