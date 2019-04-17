@@ -7,9 +7,14 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
-    respond_to do |format|
-      format.html{ redirect_to group_messages_path(@group) }
-      format.json
+    if @message.save
+      respond_to do |format|
+        format.html
+        format.json
+      end
+    else
+      flash.now[:alert] = 'メッセージを入力または画像を送信してください'
+      render :index
     end
   end
 
