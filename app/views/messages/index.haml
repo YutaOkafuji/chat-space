@@ -5,8 +5,10 @@
   .right-content
     .right-content__header
       .right-content__header__group
-        %p.right-content__header__group__name test-group
-        %p.right-content__header__group__index member:yuta
+        %p.right-content__header__group__name 
+          = @group.name
+        %p.right-content__header__group__index
+          = current_user.name
       = link_to 'Edit',"",class: "right-content__header__edit"
     .right-content__messages
       = render @messages
