@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var imagehtml = message.image == null? '' :`<img src="${message.image}" class= 'lower-message__image'>`
+    var imageHtml = message.image == null? "" : `<img src="${message.image}" class= 'lower-message__image'>`
     var html = `<div class="right-content__messages__message>
                   <p class="right-content__messages__message__user-name">
                    ${message.user_name}
@@ -11,7 +11,7 @@ $(function(){
                   <p class="right-content__messages__message__user-message">
                     ${ message.body }
                   </p>
-                  ${imagehtml}
+                  ${imageHtml}
                 </div>`
     return html;
   }
@@ -36,6 +36,7 @@ $(function(){
     })
     .fail(function() {
       alert('error');
+      $('.input-submit').attr('disabled', false);
     })
   });
 });

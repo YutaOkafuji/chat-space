@@ -6,4 +6,4 @@
   - if message.body.present?
     %p.right-content__messages__message__user-message
       = message.body
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  = image_tag message.image, class: 'lower-message__image' if message.image.present?
