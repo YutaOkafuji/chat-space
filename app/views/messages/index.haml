@@ -1,24 +1,24 @@
 .content
   .infomation-box
     .notice
-  .left-content
-    = render "side_bar"
+  = render partial: 'shared/side_bar'
   .right-content
     .right-content__header
       .right-content__header__group
-        %p.right-content__header__group__name test-group
-        %p.right-content__header__group__index member:yuta
+        %p.right-content__header__group__name 
+          = @group.name
+        %p.right-content__header__group__index
+          = current_user.name
       = link_to 'Edit',"",class: "right-content__header__edit"
     .right-content__messages
-      = render "message"
+      = render @messages
     .input-form
-      .form
-        = form_for [@group, @message] do |f|
-          .input-box
-            = f.text_field :body, class: 'input-box__text', placeholder: 'type a message'
-            = f.label :image, class: 'input-box__image' do
-              = fa_icon 'picture-o', class: 'icon'
-              = f.file_field :image, class: 'input-box__image__input'
-          = f.submit 'Send', class: 'input-submit'
+      = form_for [@group, @message], html: { id: 'message-form' } do |f|
+        .input-box
+          = f.text_field :body, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = f.file_field :image, class: 'input-box__image__input'
+            = fa_icon 'picture-o', class: 'icon'
+        = f.submit 'Send', class: 'input-submit'
 
 

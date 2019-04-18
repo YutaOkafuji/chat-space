@@ -1,9 +1,9 @@
-.right-content__message
-  %p.right-content__message__user-name
+.right-content__messages__message
+  %p.right-content__messages__message__user-name
     = message.user.name
-  %a.right-content__message__created_at
+  %a.right-content__messages__message__created_at
     = message.created_at.strftime("%Y/%m/%d %H:%M")
-  - if message.content.present?
-    %p.right-content__message__user-message
-      = message.content
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  - if message.body.present?
+    %p.right-content__messages__message__user-message
+      = message.body
+  = image_tag message.image, class: 'lower-message__image' if message.image.present?
