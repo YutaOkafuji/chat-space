@@ -33,6 +33,7 @@ $(function(){
       $('.input-box__text').val('');
       $('.right-content__messages').animate({scrollTop:$('.right-content__messages')[0].scrollHeight});
       $('.input-submit').attr('disabled', false);
+      $('.right-content__messages')[0].reset();
     })
     .fail(function() {
       alert('error');
