@@ -10,7 +10,7 @@ $(function(){
     search_list.append(html);
   };
 
-  function buildHtml2(name, user_id) {
+  function addGroupMemberHTML(name, user_id) {
     var html2 = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                    <input name='group[user_ids][]' type='hidden' value='${user_id}'>
                    <p class='chat-group-user__name'>${name}</p>
@@ -56,7 +56,7 @@ $(function(){
       var name = $(this).attr("data-user-name");
       var user_id = $(this).attr("data-user-id");
       $(this).parent().remove();
-      buildHtml2(name, user_id);
+      addGroupMemberHTML(name, user_id);
     });
   });
 
