@@ -2,7 +2,7 @@ $(function(){
   var search_list = $("#user-search-result");
   var member_list = $('#chat-group-users');
 
-  function buildHtml(user_name) {
+  function appendSearchedUserHTML(user_name) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user_name.name}</p>
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user_name.id}" data-user-name="${user_name.name}" >追加</a>
@@ -39,7 +39,7 @@ $(function(){
       $("#user-search-result").empty();
       if (user_names.length !== 0){
         user_names.forEach(function(user_name){
-          buildHtml(user_name);
+          appendSearchedUserHTML(user_name);
         });
       }
       else {
