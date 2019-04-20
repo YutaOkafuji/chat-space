@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    @user = User.where('name LIKE(?)', "%#{:keyword}%")
   end
 
   def new
@@ -30,7 +29,7 @@ class GroupsController < ApplicationController
   def edit
 
   end
-  
+
   private
   def group_params
     params.require(:group).permit(:name, { :user_ids => [] })
