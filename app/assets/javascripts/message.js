@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
-    var imageHtml = message.image == null? "" : `<img src="${message.image}" class= 'lower-message__image'>`
-    var html = `<div class="right-content__messages__message>
+    var imageHtml = message.is_image_present ? `<img src="${message.image}" class= 'lower-message__image'> ` : ''
+    var html = `<div class="right-content__messages__message" data-id="${message.id}" >
                   <p class="right-content__messages__message__user-name">
                    ${message.user_name}
                   </p>
@@ -15,6 +15,7 @@ $(function(){
                 </div>`
     return html;
   }
+
   $('#message-form').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -27,17 +28,41 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data) {
-      var html = buildHTML(data);
+    .done(function(message) {
+      var html = buildHTML(message);
       $('.right-content__messages').append(html);
       $('.input-box__text').val('');
       $('.right-content__messages').animate({scrollTop:$('.right-content__messages')[0].scrollHeight});
       $('.input-submit').attr('disabled', false);
-      $('.right-content__messages')[0].reset();
     })
     .fail(function() {
-      alert('error');
+      alert('メッセージを正常に送れませんでした。');
       $('.input-submit').attr('disabled', false);
     })
+  });
+
+  var reloadMessages = function() {
+    var location_url = location.href;
+    var group_id_url = location_url.match(/\/\d/)
+    var last_message_id = $('.right-content__messages__message:last').data('id');
+    $.ajax({
+      url: '/groups' + group_id_url +'/api/messages',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(message) {
+        message.forEach(function(message){
+        var insertHTML = buildHTML(message); 
+        $('.right-content__messages').append(insertHTML);
+        $('.right-content__messages').animate({scrollTop:$('.right-content__messages')[0].scrollHeight});
+      })
+    })
+    .fail(function() {
+      alert('メッセージを正常に取得できませんでした。');
+    });
+  };
+  $(function(){
+    setInterval(reloadMessages, 5000);
   });
 });
