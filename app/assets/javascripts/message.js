@@ -45,7 +45,6 @@ $(function(){
     var location_url = location.href;
     var group_id_url = location_url.match(/\/\d/)
     var last_message_id = $('.right-content__messages__message:last').data('id');
-    console.log(last_message_id);
     $.ajax({
       url: '/groups' + group_id_url +'/api/messages',
       type: 'GET',
@@ -53,7 +52,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(message) {
-      console.log(message);
         message.forEach(function(message){
         var insertHTML = buildHTML(message); 
         $('.right-content__messages').append(insertHTML);
