@@ -36,7 +36,7 @@ $(function(){
       $('.input-submit').attr('disabled', false);
     })
     .fail(function() {
-      alert('error');
+      alert('メッセージを正常に送れませんでした。');
       $('.input-submit').attr('disabled', false);
     })
   });
@@ -59,7 +59,7 @@ $(function(){
       })
     })
     .fail(function() {
-      console.log('error');
+      alert('メッセージを正常に取得できませんでした。');
     });
   };
   $(function(){
