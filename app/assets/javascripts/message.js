@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var imageHtml = message.is_image_present ? `<img src="${message.image}" class= 'lower-message__image'> ` : ''
     var html = `<div class="right-content__messages__message" data-id="${message.id}" >
