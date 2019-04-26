@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
       var last_message_id = $('.right-content__messages__message:last').data('id');
       
       $.ajax({
-        url: '/groups' + group_id_url +'/api/messages',
+        url: 'api/messages',
         type: 'GET',
         dataType: 'json',
         data: {id: last_message_id}
