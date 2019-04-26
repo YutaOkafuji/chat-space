@@ -3,6 +3,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   process resize_to_fill: [300, 300,"center"]
+  process :convert => 'jpg'
+  def extension_white_list
+    %w(jpg jpeg png)
+  end
   # Choose what kind of storage to use for this uploader:
   storage :fog
 

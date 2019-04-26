@@ -1,6 +1,10 @@
 $(document).on('turbolinks:load', function(){
   function buildHTML(message){
-    var imageHtml = message.is_image_present ? `<img src="${message.image}" class= 'lower-message__image'> ` : ''
+    var imageHtml = "";
+    if (message.image.url) {
+      var imageHtml = `<img src="${message.image.url}" class= 'lower-message__image'> `;
+    }
+
     var html = `<div class="right-content__messages__message" data-id="${message.id}" >
                   <p class="right-content__messages__message__user-name">
                    ${message.user_name}
@@ -27,7 +31,7 @@ $(document).on('turbolinks:load', function(){
 
   $('#message-form').on('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(this);
+    var formData = new FormData($(this).get(0));
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -43,6 +47,7 @@ $(document).on('turbolinks:load', function(){
       $('.input-box__text').val('');
       $('.right-content__messages').animate({scrollTop:$('.right-content__messages')[0].scrollHeight});
       $('.input-submit').attr('disabled', false);
+      $('.input-box__image__input').val('');
     })
     .fail(function() {
       alert('メッセージを正常に送れませんでした。');
