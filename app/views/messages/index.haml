@@ -7,8 +7,12 @@
       .right-content__header__group
         %p.right-content__header__group__name 
           = @group.name
-        %p.right-content__header__group__index
-          = current_user.name
+        .right-content__header__group__index
+          %ul.right-content__header__group__index__member-lists
+            %li.right-content__header__group__index__member-lists__title member :
+            - @group.users.each do |user|
+              %li.right-content__header__group__index__member-lists__member= user.name
+              
       = link_to 'Edit', "/groups/#{@group.id}/edit", class: "right-content__header__edit"
     .right-content__messages
       = render @messages
